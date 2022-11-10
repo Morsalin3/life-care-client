@@ -11,7 +11,7 @@ const ContactUs = () => {
     return (
     <div className='row text-start'>
             
-        <div className='col-6'>
+        <div className='col-12 col-md-6'>
             <h1>Get In Touch</h1>
             <hr className='contact-border'/>
             <h5>I'am here to help.</h5>
@@ -43,8 +43,8 @@ const ContactUs = () => {
             </Form>
         </div>
 
-            <div className='col-6 d-flex flex-column ps-5 '>
-                <Image className='w-75 pb-3' src={about} alt='' />
+            <div className='col-12 col-md-6 d-flex flex-column ps-5 '>
+                <Image className='w-75 pb-3 mt-3' src={about} alt='' />
                 <div>
                     <h4>Head Office:</h4>
                     <p>The Royal Building<br/>

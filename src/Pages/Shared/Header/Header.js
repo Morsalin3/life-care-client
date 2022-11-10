@@ -9,7 +9,7 @@ import brand from  '../../../assets/images/brand.png';
 
 const Header = () => {
     return (
-    <div className='fixed-top' >
+    <div className='sticky-top mb-5' >
         <Navbar collapseOnSelect expand="lg" bg="light" >
         <Container className='text-info '>
             <Navbar.Brand className='fw-semibold lh-lg text-blod'><span><Image style={{width:'60px',marginRight:'5px'}} src={brand} alt=''></Image></span>Life <span className='nav-brand'>Care</span></Navbar.Brand>
