@@ -14,7 +14,7 @@ const ServiceDetails = () => {
     return (
         <div className='details-container'>
            <div>
-           <h1 className='fw-bold'>this service details</h1>
+           <h1 className='fw-bold'>Service Details</h1>
            <hr className='service-border w-75 mx-auto'/>
 
             <CardGroup>

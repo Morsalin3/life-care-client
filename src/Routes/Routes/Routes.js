@@ -41,14 +41,14 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/allservices',
-                loader: () => fetch('http://localhost:5000/allservices'),
+                loader: () => fetch('https://life-care-server-delta.vercel.app/allservices'),
                 element: <AllServices></AllServices>,
                 
             },
             {
                 path: '/details/:id',
                 element: <ServiceDetails></ServiceDetails>,  
-                loader: ({params}) =>fetch (`http://localhost:5000/details/${params.id}`)
+                loader: ({params}) =>fetch (`https://life-care-server-delta.vercel.app/details/${params.id}`)
             },
             {
                 path: '/review',

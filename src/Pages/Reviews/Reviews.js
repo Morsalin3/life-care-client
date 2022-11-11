@@ -8,11 +8,12 @@ import ReviewDetails from './ReviewDetails';
 
 const Review = () => {
     const {user} = useContext(AuthContext)
+    // console.log(user)
     const detail = useLoaderData();
     const [reviews, setReviews] = useState([])
 
     const {_id,} = detail;
-    const {displayName, photoURL, email} = user;
+    // const {displayName, photoURL, email} = user;
 
     const handleReviews = event =>{
         event.preventDefault();
@@ -22,13 +23,13 @@ const Review = () => {
 
       const review ={
             service_id : _id,
-            displayName,
-            email,
-            photoURL,
+            displayName:user?.displayName,
+            email:user?.email,
+            photoURL:user?.photoURL,
             details
         }
 
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://life-care-server-delta.vercel.app/reviews',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -46,12 +47,13 @@ const Review = () => {
             })
             .catch(error=>console.log(error));
     }
-        console.log(detail)
+        // console.log(detail)
+
     useEffect(()=>{
-            fetch(`http://localhost:5000/reviews?service_id=${detail._id}`)
-            .then(res=> res.json())
-            .then(data=> setReviews(data))
-    },[detail?._id])
+        fetch(`https://life-care-server-delta.vercel.app/reviews?service_id=${detail.service_id}`)
+        .then(res=> res.json())
+        .then(data=> setReviews(data))
+    },[detail?.service_id])
 
     // data?.length && data.map(-----for review
     return (
