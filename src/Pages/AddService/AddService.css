@@ -1,0 +1,11 @@
+.service-form{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+
+}
+.add-service-border{
+    height: 8px;
+    background-color: #75c209;
+    border: none;
+}
