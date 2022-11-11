@@ -5,6 +5,7 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import './ServiceDetails.css'
+import Review from '../Reviews/Reviews';
 
 const ServiceDetails = () => {
     const detail = useLoaderData()
@@ -29,17 +30,16 @@ const ServiceDetails = () => {
                 <Card.Footer className='d-flex justify-content-between align-items-center'>
                 <small className="">Price: {price}$</small>
                 <small><FaStar className='text-warning' /> {rating}</small>
-                <Link>
-                <button style={{backgroundColor:'#8DC63F', border:'none'}} className="btn text-white ">Details</button>
-                </Link>
                 </Card.Footer>
             </Card>
             
             </CardGroup>
            </div>
-           <div>
-            <h2>User Review</h2>
-           </div>
+                <div>
+                    <h1>User Reviews</h1>
+                    <hr className='service-border w-75 mx-auto'/>
+                    <Review></Review>
+                </div>
         </div>
     );
 };

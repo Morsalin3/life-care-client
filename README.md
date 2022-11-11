@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 .It's create for Doctor service releted
 .Here use Firebase authentication
 .This create with context api & react router dom
-. And use Mongodb database 
+.And use Mongodb database 
 .Hosting on Firebase
 
 ## Available Scripts

@@ -8,9 +8,11 @@ import Home from "../../Pages/Home/Home";
 import Services from "../../Pages/Home/Services/Services";
 import LogIn from "../../Pages/Login/LogIn";
 import MyReview from "../../Pages/MyReview/MyReview";
+import Review from "../../Pages/Reviews/Reviews";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import Footer from "../../Pages/Shared/Footer/Footer";
 import SignUp from "../../Pages/Signup/SignUp";
+import PrivateRoute from "../PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -39,7 +41,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/allservices',
-                loader: () => fetch('http://localhost:5000/services'),
+                loader: () => fetch('http://localhost:5000/allservices'),
                 element: <AllServices></AllServices>,
                 
             },
@@ -47,6 +49,10 @@ export const routes = createBrowserRouter([
                 path: '/details/:id',
                 element: <ServiceDetails></ServiceDetails>,  
                 loader: ({params}) =>fetch (`http://localhost:5000/details/${params.id}`)
+            },
+            {
+                path: '/review',
+                element: <PrivateRoute><Review></Review></PrivateRoute>
             },
             {
                 path: '/blog',

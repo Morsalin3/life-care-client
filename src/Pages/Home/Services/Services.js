@@ -8,13 +8,14 @@ import AllServices from '../../AllServices/AllServices';
 const Services = () => {
     UseTitle('Services')
     const [services, setServices] = useState([]);
-
+    const newServices = [...services].reverse();
     useEffect(()=>{
         fetch('http://localhost:5000/services')
         .then(res =>res.json())
         .then(data => setServices(data))
     },[])
 
+   
 
     return (
    
@@ -26,7 +27,7 @@ const Services = () => {
         </div>
         <div className='service-container text-start'>
             {
-                services.map(service => <ServiceCard
+                newServices.map(service => <ServiceCard
                 key={service._id}
                 service={service}
                 ></ServiceCard> )

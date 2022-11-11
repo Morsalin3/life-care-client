@@ -29,7 +29,7 @@ const LogIn = () => {
                 navigate(from, {replace: true});
 
             })
-            .cath(error=>console.error(error))
+            .catch(error=>console.log(error))
     }
 
     const handleGoogleSignIn =()=>{
@@ -37,31 +37,33 @@ const LogIn = () => {
         .then(result=>{
             const user = result.user;
             console.log(user);
+            navigate(from, {replace: true});
         })
-        .catch(error=>console.error(error))
+        .catch(error=>console.log(error))
     }
+
 
     return (
         <div className='text-start w-50 mx-auto'>
             <h2>Login</h2>
 
-    <Form onSubmit={handleSignIn}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" name='email' placeholder="Enter email" required />
-        </Form.Group>
+        <Form onSubmit={handleSignIn}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" name='email' placeholder="Enter email" required />
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" name='password' placeholder="Password" required />
-        </Form.Group>
-        <Button style={{backgroundColor:'#8DC63F', border:'none',marginRight:'5px'}} type="submit">
-            Submit
-        </Button><span><ButtonGroup>
-                <Button onClick={handleGoogleSignIn} variant="outline-success"><FaGoogle></FaGoogle>  Log in With Google
-                </Button>
-                </ButtonGroup></span>
-    </Form>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" name='password' placeholder="Password" required />
+            </Form.Group>
+            <Button style={{backgroundColor:'#8DC63F', border:'none',marginRight:'5px'}} type="submit">
+                Submit
+            </Button><span><ButtonGroup>
+                    <Button onClick={handleGoogleSignIn} variant="outline-success"><FaGoogle></FaGoogle>  Log in With Google
+                    </Button>
+                    </ButtonGroup></span>
+        </Form>
         <p className='text-start mt-2'>New to Life Care <Link to='/signup'>Create a new account</Link></p>
         </div>
     );
