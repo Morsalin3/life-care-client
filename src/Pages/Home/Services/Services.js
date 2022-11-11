@@ -23,7 +23,7 @@ const Services = () => {
         <div>
         <h1 className='fw-bold'>Services</h1>
         <hr className='contact-border w-50 mx-auto'/>
-        <h4 className='text-muted'>My services suppot every body at every life stage.</h4>
+        <h4 className='text-muted mb-3'>My services suppot every body at every life stage.</h4>
         </div>
         <div className='service-container text-start'>
             {

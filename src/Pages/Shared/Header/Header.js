@@ -29,6 +29,7 @@ const Header = () => {
                 <Link to='/'><Button variant="light">Home</Button></Link>
                 <Link to='/myreview'><Button variant="light">My Review</Button></Link>
                 <Link to='/addservice'><Button variant="light">Add service</Button></Link>
+                <Link to='/blog'><Button variant="light">Blog</Button></Link>
                 { user?.email?
                     <>
                 <Link><Button onClick={handleSignOut} variant="light">Sign Out</Button></Link>

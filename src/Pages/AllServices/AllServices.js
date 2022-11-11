@@ -6,6 +6,7 @@ import AllServiceCard from '../AllServiceCard/AllServiceCard';
 
 const AllServices = () => {
     const services = useLoaderData()
+    const newServices = [...services].reverse();
     // console.log(services)
 
     if(services.length === 0 ){
@@ -18,7 +19,7 @@ const AllServices = () => {
             <hr className='contact-border w-50 mx-auto'/>
             <div className='all-service'>
                 {
-                    services.map(service => <AllServiceCard
+                    newServices.map(service => <AllServiceCard
                     key={service._id}
                     service={service}
                     ></AllServiceCard>)
