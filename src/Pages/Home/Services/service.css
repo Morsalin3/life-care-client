@@ -1,0 +1,10 @@
+.service-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.contact-border{
+    height: 8px;
+    background-color: #75c209;
+    border: none;
+}

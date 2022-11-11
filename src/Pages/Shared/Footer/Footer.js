@@ -9,7 +9,7 @@ const Footer = () => {
                     TOUCH WITH <br/>
                     LIFECARE</h2>
             </div>
-            <p className='text-white py-2'>Copyright © 2023 life-care.com</p>
+            <p className='text-white py-2'>Copyright by© life-care-2024</p>
             
         </div>
     );

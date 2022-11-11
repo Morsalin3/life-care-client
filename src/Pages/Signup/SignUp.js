@@ -2,9 +2,16 @@ import React, { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import UseTitle from '../../hooks/UseTitle';
 
 const SignUp = () => {
     const {createUser} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    UseTitle('SignUp')
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSignUp = (event) =>{
         event.preventDefault();
@@ -19,6 +26,7 @@ const SignUp = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            navigate(from, {replace: true});
         })
         .catch(error=>console.error(error));
 
@@ -43,9 +51,11 @@ const SignUp = () => {
         </Form.Group>
         <Button style={{backgroundColor:'#8DC63F', border:'none'}} type="submit">
             Submit
-        </Button>
+        </Button>  
         </Form>
-            
+        <span>
+        <p className='text-start mt-2'>Already have an account <Link to='/login'>Login</Link></p>
+        </span>
         </div>
     );
 };

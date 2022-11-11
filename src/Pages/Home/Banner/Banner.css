@@ -4,6 +4,27 @@
     /* border-bottom: 5px solid greenyellow; */
 }
 
-/* hr {
-    height: 5px;
-}   */
+.banner h2{
+    color: #8DC63F;
+}
+.banner-border{
+    height: 8px;
+    background-color: #75c209;
+    border: none;
+}
+
+/* ,
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Morsalin3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Morsalin3/issues"
+  },
+  "homepage": "https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Morsalin3#readme" */

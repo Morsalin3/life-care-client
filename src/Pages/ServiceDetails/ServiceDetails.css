@@ -1,0 +1,10 @@
+.details-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.service-border{
+    height: 8px;
+    background-color: #75c209;
+    border: none;
+
+}

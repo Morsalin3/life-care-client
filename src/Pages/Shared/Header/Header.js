@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css'
 import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -6,9 +6,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import brand from  '../../../assets/images/brand.png';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const {logOut, user} = useContext(AuthContext);
+
+    const handleSignOut = ()=>{
+        logOut()
+        .then()    
+        .catch((error)=>console.error(error));   
+    }
+
     return (
+
     <div className='sticky-top mb-5' >
         <Navbar collapseOnSelect expand="lg" bg="light" >
         <Container className='text-info '>
@@ -19,8 +29,16 @@ const Header = () => {
                 <Link to='/'><Button variant="light">Home</Button></Link>
                 <Link to='/myreview'><Button variant="light">My Review</Button></Link>
                 <Link to='/addservice'><Button variant="light">Add service</Button></Link>
-                <Link to='/signup'><Button variant="light">Sign Up</Button></Link>
-                <Link to='/login'><Button variant="light">Login</Button></Link>
+                { user?.email?
+                    <>
+                <Link><Button onClick={handleSignOut} variant="light">Sign Out</Button></Link>
+                    </>
+                    :
+                   <>
+                    <Link to='/signup'><Button variant="light">Sign Up</Button></Link>
+                    <Link to='/login'><Button variant="light">Login</Button></Link>
+                   </>
+                }
         
                 
             </Nav>
