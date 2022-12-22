@@ -8,11 +8,10 @@ import ReviewDetails from './ReviewDetails';
 
 const Review = () => {
     const {user} = useContext(AuthContext)
-    // console.log(user)
     const detail = useLoaderData();
-    const [reviews, setReviews] = useState([])
-
-    const {_id,} = detail;
+    //  console.log(detail, 'card info')
+    const [serviceReview, setServiceReiview] = useState([])
+    const {_id, title} = detail;
     // const {displayName, photoURL, email} = user;
 
     const handleReviews = event =>{
@@ -50,18 +49,18 @@ const Review = () => {
         // console.log(detail)
 
     useEffect(()=>{
-        fetch(`https://life-care-server-delta.vercel.app/reviews?service_id=${detail.service_id}`)
+        fetch(`https://life-care-server-delta.vercel.app/servicereviews?service_id=${title?.service_id}`)
         .then(res=> res.json())
-        .then(data=> setReviews(data))
-    },[detail?.service_id])
+        .then(data=>setServiceReiview(data))
+    },[title?.service_id])
 
     // data?.length && data.map(-----for review
     return (
 
     <div>
-        <div className='w-75 mx-auto'>
+        <div className='w-75 mx-auto overflow-auto' style={{height:'300px'}}>
             {
-                reviews.map(rev => <ReviewDetails
+                serviceReview.map(rev => <ReviewDetails
                 key={rev._id}
                 rev={rev}
                 ></ReviewDetails>)
